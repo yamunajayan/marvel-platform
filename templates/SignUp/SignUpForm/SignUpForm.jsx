@@ -15,10 +15,10 @@ import { AUTH_STEPS, VALIDATION_STATES } from '@/libs/constants/auth';
 import ALERT_COLORS from '@/libs/constants/notification';
 import useWatchFields from '@/libs/hooks/useWatchFields';
 
+import { AuthContext } from '@/libs/providers/GlobalProvider';
 import AUTH_REGEX from '@/libs/regex/auth';
 import { validatePassword } from '@/libs/utils/AuthUtils';
-import { AuthContext } from '@/providers/GlobalProvider';
-import { signUp } from '@/services/user/signUp';
+import { signUp } from '@/libs/services/user/signUp';
 
 const DEFAULT_FORM_VALUES = {
   email: '',

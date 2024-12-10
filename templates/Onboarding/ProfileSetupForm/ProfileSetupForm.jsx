@@ -19,9 +19,9 @@ import styles from './styles.js';
 
 import ALERT_COLORS from '@/libs/constants/notification.js';
 
+import { AuthContext } from '@/libs/providers/GlobalProvider.jsx';
 import { setTempData } from '@/libs/redux/slices/onboardingSlice.js';
 import ONBOARDING_REGEX from '@/libs/regex/onboarding.js';
-import { AuthContext } from '@/providers/GlobalProvider.jsx';
 
 const ProfileSetupForm = ({ onNext, tempData }) => {
   const dispatch = useDispatch();

@@ -11,8 +11,8 @@ import styles from './styles';
 
 import ALERT_COLORS from '@/libs/constants/notification';
 
-import { AuthContext } from '@/providers/GlobalProvider';
-import { sendVerification } from '@/services/user/manageUser';
+import { AuthContext } from '@/libs/providers/GlobalProvider';
+import { sendVerification } from '@/libs/services/user/manageUser';
 
 const VerifyEmailPage = (props) => {
   const { email } = props;

@@ -18,12 +18,12 @@ import { AUTH_ERROR_MESSAGES } from '@/libs/constants/auth';
 import ALERT_COLORS from '@/libs/constants/notification';
 import ROUTES from '@/libs/constants/routes';
 
+import { AuthContext } from '@/libs/providers/GlobalProvider';
 import { setLoading } from '@/libs/redux/slices/authSlice';
 import { auth, firestore } from '@/libs/redux/store';
 import fetchUserData from '@/libs/redux/thunks/user';
 
 import AUTH_REGEX from '@/libs/regex/auth';
-import { AuthContext } from '@/providers/GlobalProvider';
 
 const DEFAULT_FORM_VALUES = {
   email: '',

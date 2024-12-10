@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import MainAppLayout from '@/layouts/MainAppLayout';
 
 import ROUTES from '@/libs/constants/routes';
-import useToolProps from '@/libs/hooks/useToolProps';
 import ToolPage, { ToolPageSkeleton } from '@/tools';
+import useToolProps from '@/tools/libs/hooks/useToolProps';
 
 /**
  * This component renders the ToolPage component.

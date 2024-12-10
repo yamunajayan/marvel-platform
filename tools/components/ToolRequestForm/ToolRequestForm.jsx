@@ -16,12 +16,12 @@ import PrimaryTextFieldInput from '@/components/PrimaryTextFieldInput';
 
 import styles from './styles';
 
-import { INPUT_TYPES } from '@/libs/constants/inputs';
 import ALERT_COLORS from '@/libs/constants/notification';
+import { AuthContext } from '@/libs/providers/GlobalProvider';
 import { firestore } from '@/libs/redux/store';
-import { AuthContext } from '@/providers/GlobalProvider';
 
 import { fetchToolHistory, actions as toolActions } from '@/tools/data';
+import { INPUT_TYPES } from '@/tools/libs/constants/inputs';
 import submitPrompt from '@/tools/libs/services/submitPrompt';
 import evaluateCondition from '@/tools/libs/utils/evaluateCondition';
 

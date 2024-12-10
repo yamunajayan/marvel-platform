@@ -13,7 +13,7 @@ import useWatchFields from '@/libs/hooks/useWatchFields';
 
 import { auth } from '@/libs/redux/store';
 import AUTH_REGEX from '@/libs/regex/auth';
-import { sendPasswordReset } from '@/services/user/manageUser';
+import { sendPasswordReset } from '@/libs/services/user/manageUser';
 
 const DEFAULT_ERR_STATE = {
   email: false,

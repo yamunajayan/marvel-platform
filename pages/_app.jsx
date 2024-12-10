@@ -7,8 +7,8 @@ import { GoogleAnalytics } from 'nextjs-google-analytics';
 
 import firebaseConfig from '@/libs/firebase/config';
 
+import GlobalProvider from '@/libs/providers/GlobalProvider';
 import theme from '@/libs/theme/theme';
-import GlobalProvider from '@/providers/GlobalProvider';
 
 import '@/styles/globals.css';
 

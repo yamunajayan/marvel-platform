@@ -33,6 +33,7 @@ import TextMessage from './TextMessage';
 
 import { MESSAGE_ROLE, MESSAGE_TYPES } from '@/libs/constants/bots';
 
+import { AuthContext } from '@/libs/providers/GlobalProvider';
 import {
   openInfoChat,
   resetChat,
@@ -52,9 +53,8 @@ import {
 import { updateHistoryEntry } from '@/libs/redux/slices/historySlice';
 import { firestore } from '@/libs/redux/store';
 import fetchHistory from '@/libs/redux/thunks/fetchHistory';
-import { AuthContext } from '@/providers/GlobalProvider';
-import createChatSession from '@/services/chatbot/createChatSession';
-import sendMessage from '@/services/chatbot/sendMessage';
+import createChatSession from '@/libs/services/chatbot/createChatSession';
+import sendMessage from '@/libs/services/chatbot/sendMessage';
 
 const ChatInterface = () => {
   const messagesContainerRef = useRef();

@@ -1,8 +1,8 @@
 import { Grid, Typography } from '@mui/material';
 
-import ToolCard, { ToolCardSkeleton } from '../ToolCard';
-
 import styles from './styles';
+
+import ToolCard, { ToolCardSkeleton } from '@/tools/components/ToolCard';
 
 const DEFAULT_TOOLS = new Array(8)
   .fill()

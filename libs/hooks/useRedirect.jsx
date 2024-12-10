@@ -14,9 +14,9 @@ import {
 } from '@/libs/redux/slices/authSlice';
 import { setLoading as setUserLoading } from '@/libs/redux/slices/userSlice';
 import { auth } from '@/libs/redux/store';
-import { fetchToolHistory } from '@/libs/redux/thunks/toolHistory';
 import fetchUserData from '@/libs/redux/thunks/user';
 import { homeRegex, onboardingRegex } from '@/libs/regex/routes';
+import { fetchToolHistory } from '@/tools/data';
 
 const redirectRegex = /\/redirect.*/;
 

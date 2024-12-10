@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import fetchTools from '../thunks/tools';
+import fetchTools from '@/libs/redux/thunks/tools';
 
 const toolsState = {
   data: null,

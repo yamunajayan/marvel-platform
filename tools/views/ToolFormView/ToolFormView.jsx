@@ -1,12 +1,14 @@
 import { Grid } from '@mui/material';
-
 import { useDispatch } from 'react-redux';
 
 import AccordionInputGroupItem from '@/components/AccordionInputGroupItem';
 
 import styles from './styles';
 
-import { setFormOpen } from '@/libs/redux/slices/toolsSlice';
+import ToolRequestForm from '@/tools/components/ToolRequestForm';
+import { actions as toolActions } from '@/tools/data';
+
+const { setFormOpen } = toolActions;
 
 /**
  * Renders a form component that displays tool details and allows interaction
@@ -19,7 +21,7 @@ import { setFormOpen } from '@/libs/redux/slices/toolsSlice';
  * @param {boolean} props.formOpen - Indicates if the form is open.
  * @param {string} props.response - The response to display within the form.
  */
-const ToolForm = (props) => {
+const ToolFormView = (props) => {
   const { toolDoc, formOpen, response } = props;
   const dispatch = useDispatch();
 
@@ -32,10 +34,10 @@ const ToolForm = (props) => {
         open={formOpen}
         toggleOpen={() => dispatch(setFormOpen(!formOpen))}
       >
-        <ToolForm inputs={toolDoc?.inputs} id={toolDoc?.id} />
+        <ToolRequestForm inputs={toolDoc?.inputs} id={toolDoc?.id} />
       </AccordionInputGroupItem>
     </Grid>
   );
 };
 
-export default ToolForm;
+export default ToolFormView;

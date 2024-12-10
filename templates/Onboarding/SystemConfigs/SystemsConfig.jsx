@@ -9,8 +9,8 @@ import styles from './styles';
 
 import ALERT_COLORS from '@/libs/constants/notification.js';
 
+import { AuthContext } from '@/libs/providers/GlobalProvider.jsx';
 import { setTempData } from '@/libs/redux/slices/onboardingSlice.js';
-import { AuthContext } from '@/providers/GlobalProvider.jsx';
 
 const SystemConfigs = ({ onNext }) => {
   const dispatch = useDispatch();
