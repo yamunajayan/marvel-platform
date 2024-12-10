@@ -12,6 +12,13 @@ import ROUTES from '@/libs/constants/routes';
 import useFilterByTime from '@/libs/hooks/useFilterByTime';
 import ToolHistoryListingContainer from '@/tools/components/ToolHistoryListingContainer';
 
+/**
+ * The ToolHistoryPage component renders the tool history page,
+ * which displays all the user's previous tool sessions organized by time.
+ * If the user has no tool sessions, it displays a message with a button to explore tools.
+ *
+ * This component uses the useFilterByTime hook to group the data by time.
+ */
 const ToolHistoryPage = () => {
   const { data, loading } = useSelector((state) => state.toolHistory);
 

@@ -4,6 +4,13 @@ import { useSelector } from 'react-redux';
 
 import styles from './styles';
 
+/**
+ * QuizResponse component renders a list of quiz questions and their choices.
+ * It fetches the quiz response data from the Redux store and displays each
+ * question with its associated choices in a styled grid layout.
+ * The component uses Material-UI's Grid, Typography, and Fade components
+ * for styling and animations. It includes optional rendering of a title.
+ */
 const QuizResponse = () => {
   const { response } = useSelector((state) => state.tools);
 

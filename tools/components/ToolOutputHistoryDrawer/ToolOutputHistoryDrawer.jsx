@@ -28,6 +28,16 @@ const DEFAULT_DATA = {
   ],
 };
 
+/**
+ * Renders a drawer component displaying information about a tool session.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {boolean} props.isOpen - Indicates whether the drawer is open.
+ * @param {function} props.onClose - Callback function to handle closing the drawer.
+ * @param {Object} props.data - The data object containing the tool information.
+ *
+ * @returns {JSX.Element} A React component that renders the tool output history drawer.
+ */
 const ToolOutputHistoryDrawer = (props) => {
   const { isOpen, onClose, data } = props;
 

@@ -2,6 +2,15 @@ import { Grid, Skeleton, useTheme } from '@mui/material';
 
 import styles from '../../styles';
 
+/**
+ * A skeleton component for the ToolPage.
+ *
+ * This component renders a skeleton loading component for the tool page.
+ * It uses a Grid component with specified properties and two Skeleton components with customized styling.
+ * The first Skeleton component renders a skeleton loading component for the back button.
+ * The second Skeleton component renders a skeleton loading component for the tool form.
+ * @returns {JSX.Element} React element representing the tool page skeleton.
+ */
 const ToolPageSkeleton = () => {
   const theme = useTheme();
 
