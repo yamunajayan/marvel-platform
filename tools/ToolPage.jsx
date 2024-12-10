@@ -14,7 +14,7 @@ import ROUTES from '@/libs/constants/routes';
 
 import theme from '@/libs/theme/theme';
 import { actions as ToolActions } from '@/tools/data';
-import ToolForm from '@/tools/views/ToolForm';
+import ToolForm from '@/tools/views/ToolFormView';
 
 const { resetCommunicator } = ToolActions;
 
