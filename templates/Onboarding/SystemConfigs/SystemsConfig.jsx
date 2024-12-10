@@ -5,12 +5,12 @@ import { useDispatch } from 'react-redux';
 
 import NotficationToggle from '@/components/NotficationToggle';
 
-import ALERT_COLORS from '@/constants/notification.js';
-
 import styles from './styles';
 
+import ALERT_COLORS from '@/libs/constants/notification.js';
+
+import { setTempData } from '@/libs/redux/slices/onboardingSlice.js';
 import { AuthContext } from '@/providers/GlobalProvider.jsx';
-import { setTempData } from '@/redux/slices/onboardingSlice.js';
 
 const SystemConfigs = ({ onNext }) => {
   const dispatch = useDispatch();

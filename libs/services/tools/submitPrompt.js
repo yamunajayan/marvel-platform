@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 
-import { firestore } from '../../firebase/firebaseSetup'; // Import the existing Firestore instance
+import { firestore } from '../../libs/firebase/firebaseSetup'; // Import the existing Firestore instance
 
 /**
  * Save the tool session response to Firestore

@@ -1,4 +1,4 @@
-import { getRandomBackgroundColor } from '@/utils/MiscellaneousUtils';
+import { getRandomBackgroundColor } from '@/libs/utils/MiscellaneousUtils';
 
 const styles = {
   mainGridProps: {

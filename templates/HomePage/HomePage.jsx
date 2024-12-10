@@ -10,9 +10,9 @@ import ToolsListingContainer from '@/components/ToolsListingContainer';
 import Star from '@/assets/svg/Star_3.svg';
 import ImageURLs from '@/assets/urls';
 
-import disableFilters from '@/constants/disableFilters';
-
 import styles from './styles';
+
+import disableFilters from '@/libs/constants/disableFilters';
 
 const TABS = ['All', 'Questions', 'Planning', 'Feedback'];
 

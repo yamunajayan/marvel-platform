@@ -11,10 +11,6 @@ import AccordionInputGroupItem from '@/components/AccordionInputGroupItem';
 
 import GradientOutlinedButton from '@/components/GradientOutlinedButton';
 
-import ROUTES from '@/constants/routes';
-
-import { TOOLS_ID } from '@/constants/tools';
-
 import FlashCardList from './FlashCardList';
 import QuizResponse from './QuizResponse';
 import styles from './styles';
@@ -22,8 +18,11 @@ import SyllabusGeneratorResponse from './SyllabusGeneratorResponse';
 import ToolForm from './ToolForm';
 import WorksheetGeneratorResponse from './WorksheetGeneratorResponse';
 
-import { resetCommunicator, setFormOpen } from '@/redux/slices/toolsSlice';
-import theme from '@/theme/theme';
+import ROUTES from '@/libs/constants/routes';
+import { TOOLS_ID } from '@/libs/constants/tools';
+
+import { resetCommunicator, setFormOpen } from '@/libs/redux/slices/toolsSlice';
+import theme from '@/libs/theme/theme';
 
 const RESPONSE_OUTPUTS = {
   [TOOLS_ID.FLASHCARDS_GENERATOR]: FlashCardList,

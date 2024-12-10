@@ -6,8 +6,8 @@ import ToolImage from '@/assets/images/BookImage.png';
 
 import styles from './styles';
 
-import { convertToUnixTimestamp } from '@/utils/FirebaseUtils';
-import { getToolData } from '@/utils/ToolUtils';
+import { convertToUnixTimestamp } from '@/libs/utils/FirebaseUtils';
+import { getToolData } from '@/libs/utils/ToolUtils';
 
 /**
  * Renders a card component displaying information about a tool session.

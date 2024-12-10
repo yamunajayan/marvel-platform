@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-import { VALIDATION_STATES } from '@/constants/auth';
+import { VALIDATION_STATES } from '@/libs/constants/auth';
 
 const { SUCCESS, ERROR, DEFAULT } = VALIDATION_STATES;
 

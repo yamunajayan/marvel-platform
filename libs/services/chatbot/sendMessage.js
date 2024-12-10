@@ -1,7 +1,11 @@
 import { httpsCallable } from 'firebase/functions';
 
-import { setError, setStreaming, setTyping } from '@/redux/slices/chatSlice';
-import { functions } from '@/redux/store';
+import {
+  setError,
+  setStreaming,
+  setTyping,
+} from '@/libs/redux/slices/chatSlice';
+import { functions } from '@/libs/redux/store';
 
 const sendMessage = async (payload, dispatch) => {
   try {

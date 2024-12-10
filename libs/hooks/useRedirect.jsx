@@ -4,19 +4,19 @@ import { applyActionCode } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AUTH_MODES } from '@/constants/auth';
-import ALERT_COLORS from '@/constants/notification';
-import ROUTES from '@/constants/routes';
+import { AUTH_MODES } from '@/libs/constants/auth';
+import ALERT_COLORS from '@/libs/constants/notification';
+import ROUTES from '@/libs/constants/routes';
 
 import {
   setLoading as setAuthLoading,
   setEmailVerified,
-} from '@/redux/slices/authSlice';
-import { setLoading as setUserLoading } from '@/redux/slices/userSlice';
-import { auth } from '@/redux/store';
-import { fetchToolHistory } from '@/redux/thunks/toolHistory';
-import fetchUserData from '@/redux/thunks/user';
-import { homeRegex, onboardingRegex } from '@/regex/routes';
+} from '@/libs/redux/slices/authSlice';
+import { setLoading as setUserLoading } from '@/libs/redux/slices/userSlice';
+import { auth } from '@/libs/redux/store';
+import { fetchToolHistory } from '@/libs/redux/thunks/toolHistory';
+import fetchUserData from '@/libs/redux/thunks/user';
+import { homeRegex, onboardingRegex } from '@/libs/regex/routes';
 
 const redirectRegex = /\/redirect.*/;
 

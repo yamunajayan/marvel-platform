@@ -2,15 +2,15 @@ import { ContentCopy, FileDownload } from '@mui/icons-material';
 import { Button, Drawer, Grid, Typography } from '@mui/material';
 import moment from 'moment';
 
-import { TOOLS_ID } from '@/constants/tools';
-
 import styles from './styles';
 
 import FlashCardsOutput from './toolRenderers/FlashCardsOutput';
 import QuizOutput from './toolRenderers/QuizOutput';
 
-import { convertToUnixTimestamp } from '@/utils/FirebaseUtils';
-import { copyToClipboard, exportToCSV } from '@/utils/ToolHistoryUtils';
+import { TOOLS_ID } from '@/libs/constants/tools';
+
+import { convertToUnixTimestamp } from '@/libs/utils/FirebaseUtils';
+import { copyToClipboard, exportToCSV } from '@/libs/utils/ToolHistoryUtils';
 
 const DRAWER_RENDERERS = {
   [TOOLS_ID.QUIZ_GENERATOR]: QuizOutput,

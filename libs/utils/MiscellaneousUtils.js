@@ -1,4 +1,4 @@
-import AVATAR_COLOURS from '@/constants/colours';
+import AVATAR_COLOURS from '@/libs/constants/colours';
 
 /**
  * Generates an SVG string representing a shimmer effect.

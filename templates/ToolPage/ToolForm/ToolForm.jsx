@@ -14,21 +14,21 @@ import PrimaryFileUpload from '@/components/PrimaryFileUpload';
 import PrimarySelectorInput from '@/components/PrimarySelectorInput';
 import PrimaryTextFieldInput from '@/components/PrimaryTextFieldInput';
 
-import { INPUT_TYPES } from '@/constants/inputs';
-import ALERT_COLORS from '@/constants/notification';
-
 import styles from './styles';
 
 import evaluateCondition from './utils/evaluateCondition';
 
-import { AuthContext } from '@/providers/GlobalProvider';
+import { INPUT_TYPES } from '@/libs/constants/inputs';
+import ALERT_COLORS from '@/libs/constants/notification';
+
 import {
   setCommunicatorLoading,
   setFormOpen,
   setResponse,
-} from '@/redux/slices/toolsSlice';
-import { firestore } from '@/redux/store';
-import { fetchToolHistory } from '@/redux/thunks/toolHistory';
+} from '@/libs/redux/slices/toolsSlice';
+import { firestore } from '@/libs/redux/store';
+import { fetchToolHistory } from '@/libs/redux/thunks/toolHistory';
+import { AuthContext } from '@/providers/GlobalProvider';
 import submitPrompt from '@/services/tools/submitPrompt';
 
 const ToolForm = (props) => {

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import fetchTools from '@/redux/thunks/tools';
+import fetchTools from '@/libs/redux/thunks/tools';
 
 /**
  * Returns properties used in the ToolPage component.

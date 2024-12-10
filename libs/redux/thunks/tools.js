@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { collection, getDocs, query } from 'firebase/firestore';
 
-import { firestore } from '@/redux/store';
+import { firestore } from '@/libs/redux/store';
 
 const fetchTools = createAsyncThunk('tools/fetch', async () => {
   // Query to fetch kai tools

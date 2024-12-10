@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
-import { firestore } from '@/redux/store';
+import { firestore } from '@/libs/redux/store';
 
 export const fetchToolHistory = createAsyncThunk(
   'toolHistory/fetchToolHistory',

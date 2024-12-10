@@ -3,9 +3,9 @@ import { Card, Chip, Grid, Typography } from '@mui/material';
 
 import { useRouter } from 'next/router';
 
-import { TOOLS_ID } from '@/constants/tools';
-
 import styles from './styles';
+
+import { TOOLS_ID } from '@/libs/constants/tools';
 
 /**
  * Returns a Tool Card component with an image and a chip displaying the amount of coins.

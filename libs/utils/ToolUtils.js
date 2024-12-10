@@ -1,4 +1,4 @@
-import { TOOLS_ID } from '@/constants/tools';
+import { TOOLS_ID } from '@/libs/constants/tools';
 
 /**
  * Renders tool data based on the toolId and item provided from tool constants.

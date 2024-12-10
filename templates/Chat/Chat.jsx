@@ -22,8 +22,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import NavigationIcon from '@/assets/svg/Navigation.svg';
 
-import { MESSAGE_ROLE, MESSAGE_TYPES } from '@/constants/bots';
-
 import ChatHistoryWindow from './ChatHistoryWindow';
 import ChatSpinner from './ChatSpinner';
 import DefaultPrompt from './DefaultPrompt';
@@ -33,7 +31,8 @@ import styles from './styles';
 
 import TextMessage from './TextMessage';
 
-import { AuthContext } from '@/providers/GlobalProvider';
+import { MESSAGE_ROLE, MESSAGE_TYPES } from '@/libs/constants/bots';
+
 import {
   openInfoChat,
   resetChat,
@@ -49,10 +48,11 @@ import {
   setStreaming,
   setStreamingDone,
   setTyping,
-} from '@/redux/slices/chatSlice';
-import { updateHistoryEntry } from '@/redux/slices/historySlice';
-import { firestore } from '@/redux/store';
-import fetchHistory from '@/redux/thunks/fetchHistory';
+} from '@/libs/redux/slices/chatSlice';
+import { updateHistoryEntry } from '@/libs/redux/slices/historySlice';
+import { firestore } from '@/libs/redux/store';
+import fetchHistory from '@/libs/redux/thunks/fetchHistory';
+import { AuthContext } from '@/providers/GlobalProvider';
 import createChatSession from '@/services/chatbot/createChatSession';
 import sendMessage from '@/services/chatbot/sendMessage';
 

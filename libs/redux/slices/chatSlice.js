@@ -1,8 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { DEFAULT_PROMPTS, MESSAGE_ROLE, MESSAGE_TYPES } from '@/constants/bots';
-
 import fetchChat from '../thunks/fetchChat';
+
+import {
+  DEFAULT_PROMPTS,
+  MESSAGE_ROLE,
+  MESSAGE_TYPES,
+} from '@/libs/constants/bots';
 
 const initialState = {
   input: '',

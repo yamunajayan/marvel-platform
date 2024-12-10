@@ -6,7 +6,7 @@ import CartoonLetter from '@/assets/svg/CartoonLetter.svg';
 
 import styles from './styles';
 
-import { auth } from '@/redux/store';
+import { auth } from '@/libs/redux/store';
 
 import { sendPasswordReset } from '@/services/user/manageUser';
 
