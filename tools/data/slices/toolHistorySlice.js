@@ -31,4 +31,4 @@ const ToolHistorySlice = createSlice({
   },
 });
 
-export default ToolHistorySlice.reducer;
+export default ToolHistorySlice;

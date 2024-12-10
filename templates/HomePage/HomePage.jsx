@@ -5,7 +5,6 @@ import { Box, Grid, TextField, Typography } from '@mui/material';
 import Image from 'next/image';
 
 import TabButton from '@/components/TabButton';
-import ToolsListingContainer from '@/components/ToolsListingContainer';
 
 import Star from '@/assets/svg/Star_3.svg';
 import ImageURLs from '@/assets/urls';
@@ -13,6 +12,7 @@ import ImageURLs from '@/assets/urls';
 import styles from './styles';
 
 import disableFilters from '@/libs/constants/disableFilters';
+import { ToolsListingContainer } from '@/tools';
 
 const TABS = ['All', 'Questions', 'Planning', 'Feedback'];
 

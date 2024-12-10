@@ -1,6 +1,6 @@
 import { Grid, Skeleton, useTheme } from '@mui/material';
 
-import styles from './styles';
+import styles from '../../styles';
 
 const ToolPageSkeleton = () => {
   const theme = useTheme();

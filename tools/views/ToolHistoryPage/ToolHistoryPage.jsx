@@ -4,13 +4,13 @@ import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 
 import GradientOutlinedButton from '@/components/GradientOutlinedButton';
-import ToolHistoryListingContainer from '@/components/ToolHistoryListingContainer';
 
 import styles from './styles';
 
 import ROUTES from '@/libs/constants/routes';
 
 import useFilterByTime from '@/libs/hooks/useFilterByTime';
+import ToolHistoryListingContainer from '@/tools/components/ToolHistoryListingContainer';
 
 const ToolHistoryPage = () => {
   const { data, loading } = useSelector((state) => state.toolHistory);

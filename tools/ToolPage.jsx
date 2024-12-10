@@ -2,34 +2,22 @@ import { useEffect } from 'react';
 
 import { ArrowBack } from '@mui/icons-material';
 import { Grid } from '@mui/material';
-
 import { useRouter } from 'next/router';
-
 import { useDispatch, useSelector } from 'react-redux';
-
-import AccordionInputGroupItem from '@/components/AccordionInputGroupItem';
 
 import GradientOutlinedButton from '@/components/GradientOutlinedButton';
 
-import FlashCardList from './FlashCardList';
-import QuizResponse from './QuizResponse';
+import TOOL_OUTPUTS from './outputs';
 import styles from './styles';
-import SyllabusGeneratorResponse from './SyllabusGeneratorResponse';
-import ToolForm from './ToolForm';
-import WorksheetGeneratorResponse from './WorksheetGeneratorResponse';
+
+import ToolForm from './views/ToolForm';
 
 import ROUTES from '@/libs/constants/routes';
-import { TOOLS_ID } from '@/libs/constants/tools';
 
-import { resetCommunicator, setFormOpen } from '@/libs/redux/slices/toolsSlice';
 import theme from '@/libs/theme/theme';
+import { actions as ToolActions } from '@/tools/data';
 
-const RESPONSE_OUTPUTS = {
-  [TOOLS_ID.FLASHCARDS_GENERATOR]: FlashCardList,
-  [TOOLS_ID.QUIZ_GENERATOR]: QuizResponse,
-  [TOOLS_ID.WORKSHEET_GENERATOR]: WorksheetGeneratorResponse,
-  [TOOLS_ID.SYLLABUS_GENERATOR]: SyllabusGeneratorResponse,
-};
+const { resetCommunicator } = ToolActions;
 
 const ToolPage = (props) => {
   const { toolDoc } = props;
@@ -65,28 +53,12 @@ const ToolPage = (props) => {
     );
   };
 
-  const renderForm = () => {
-    return (
-      <Grid {...styles.formGridProps}>
-        <AccordionInputGroupItem
-          title={toolDoc?.name}
-          description={toolDoc?.description}
-          response={response}
-          open={formOpen}
-          toggleOpen={() => dispatch(setFormOpen(!formOpen))}
-        >
-          <ToolForm inputs={toolDoc?.inputs} id={toolDoc?.id} />
-        </AccordionInputGroupItem>
-      </Grid>
-    );
-  };
-
-  const ToolOutputComponent = RESPONSE_OUTPUTS[id];
+  const ToolOutputComponent = TOOL_OUTPUTS[id];
 
   return (
     <Grid {...styles.mainGridProps}>
       {renderBackButton()}
-      {renderForm()}
+      <ToolForm toolDoc={toolDoc} formOpen={formOpen} response={response} />
       {!formOpen && response && <ToolOutputComponent />}
     </Grid>
   );

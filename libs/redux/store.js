@@ -6,16 +6,16 @@ import authReducer from './slices/authSlice';
 import chatReducer from './slices/chatSlice';
 import historyReducer from './slices/historySlice';
 import onboardingReducer from './slices/onboardingSlice';
-import toolHistoryReducer from './slices/toolHistorySlice';
-import toolsReducer from './slices/toolsSlice';
 import userReducer from './slices/userSlice';
+
+import { reducers as toolsReducers } from '@/tools/data';
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
     user: userReducer,
-    tools: toolsReducer,
-    toolHistory: toolHistoryReducer,
+    tools: toolsReducers?.toolsReducer,
+    toolHistory: toolsReducers.toolHistoryReducer,
     chat: chatReducer,
     onboarding: onboardingReducer,
     history: historyReducer,

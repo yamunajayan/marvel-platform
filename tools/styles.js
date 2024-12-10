@@ -33,13 +33,6 @@ const styles = {
     fontSize: 'inherit',
     color: (theme) => theme.palette.primary.main,
   },
-  formGridProps: {
-    container: true,
-    item: true,
-    mobileSmall: 12,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-  },
   outlinedButtonProps: {
     color: 'purple',
     extraProps: {

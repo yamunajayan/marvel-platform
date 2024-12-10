@@ -58,14 +58,4 @@ const tools = createSlice({
   },
 });
 
-export const {
-  reset,
-  setCommunicatorLoading,
-  setPrompt,
-  setResponse,
-  setFormOpen,
-  setError,
-  resetCommunicator,
-} = tools.actions;
-
-export default tools.reducer;
+export default tools;

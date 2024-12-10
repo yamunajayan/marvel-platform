@@ -16,22 +16,18 @@ import PrimaryTextFieldInput from '@/components/PrimaryTextFieldInput';
 
 import styles from './styles';
 
-import evaluateCondition from './utils/evaluateCondition';
-
 import { INPUT_TYPES } from '@/libs/constants/inputs';
 import ALERT_COLORS from '@/libs/constants/notification';
-
-import {
-  setCommunicatorLoading,
-  setFormOpen,
-  setResponse,
-} from '@/libs/redux/slices/toolsSlice';
 import { firestore } from '@/libs/redux/store';
-import { fetchToolHistory } from '@/libs/redux/thunks/toolHistory';
 import { AuthContext } from '@/providers/GlobalProvider';
-import submitPrompt from '@/services/tools/submitPrompt';
 
-const ToolForm = (props) => {
+import { fetchToolHistory, actions as toolActions } from '@/tools/data';
+import submitPrompt from '@/tools/libs/services/submitPrompt';
+import evaluateCondition from '@/tools/libs/utils/evaluateCondition';
+
+const { setCommunicatorLoading, setFormOpen, setResponse } = toolActions;
+
+const ToolRequestForm = (props) => {
   const { id, inputs } = props;
   const theme = useTheme();
   const dispatch = useDispatch();
@@ -416,4 +412,4 @@ const ToolForm = (props) => {
   );
 };
 
-export default ToolForm;
+export default ToolRequestForm;
