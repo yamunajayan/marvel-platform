@@ -14,11 +14,10 @@ import sharedStyles from '@/styles/shared/sharedStyles';
 import { AUTH_STEPS, VALIDATION_STATES } from '@/libs/constants/auth';
 import ALERT_COLORS from '@/libs/constants/notification';
 import useWatchFields from '@/libs/hooks/useWatchFields';
-
 import { AuthContext } from '@/libs/providers/GlobalProvider';
 import AUTH_REGEX from '@/libs/regex/auth';
-import { validatePassword } from '@/libs/utils/AuthUtils';
 import { signUp } from '@/libs/services/user/signUp';
+import { validatePassword } from '@/libs/utils/AuthUtils';
 
 const DEFAULT_FORM_VALUES = {
   email: '',
