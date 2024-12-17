@@ -32,8 +32,7 @@ const marvelCommunicator = async (payload) => {
 
     const { messages, user, toolData, type } = payload.data;
     const isToolCommunicator = type === BOT_TYPE.TOOL;
-    // const MARVEL_API_KEY = process.env.MARVEL_API_KEY;
-    const MARVEL_API_KEY = "AIzaSyAlXHdNPGTg7Nk7ZBYK0VGpLr_dBA7hvV8";
+    const MARVEL_API_KEY = process.env.MARVEL_API_KEY;
     const MARVEL_ENDPOINT = process.env.MARVEL_ENDPOINT;
 
     DEBUG &&
