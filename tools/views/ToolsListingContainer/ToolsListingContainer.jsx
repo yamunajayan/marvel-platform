@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material';
+import { TOOLS_ID } from '@/tools/libs/constants/tools';
 
 import styles from './styles';
 
@@ -30,10 +31,19 @@ const ToolsListingContainer = (props) => {
   };
 
   const renderCards = () => {
+    const sortedTools = [...(data || [])].sort((a, b) => {
+      const aInToolsId = Object.values(TOOLS_ID).includes(a.id);
+      const bInToolsId = Object.values(TOOLS_ID).includes(b.id);
+      
+      if (aInToolsId && !bInToolsId) return -1;
+      if (!aInToolsId && bInToolsId) return 1;
+      return 0;
+    });
+
     return (
       <Grid {...styles.containerGridProps}>
         <Grid {...styles.innerListGridProps}>
-          {data?.map((tool) => (
+          {sortedTools?.map((tool) => (
             <ToolCard key={tool.id} {...tool} />
           ))}
         </Grid>

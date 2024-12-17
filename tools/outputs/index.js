@@ -7,7 +7,7 @@ import { TOOLS_ID } from '@/tools/libs/constants/tools';
 
 const TOOL_OUTPUTS = {
   [TOOLS_ID.FLASHCARDS_GENERATOR]: FlashCardList,
-  [TOOLS_ID.QUIZ_GENERATOR]: QuizResponse,
+  [TOOLS_ID.MULTIPLE_CHOICE_QUIZ_GENERATOR]: QuizResponse,
   [TOOLS_ID.WORKSHEET_GENERATOR]: WorksheetGeneratorResponse,
   [TOOLS_ID.SYLLABUS_GENERATOR]: SyllabusGeneratorResponse,
 };

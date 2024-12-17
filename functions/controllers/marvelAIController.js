@@ -5,7 +5,8 @@ const { logger } = require('firebase-functions/v1');
 const { Timestamp } = require('firebase-admin/firestore');
 const { BOT_TYPE, AI_ENDPOINTS } = require('../constants');
 
-const DEBUG = process.env.DEBUG;
+// const DEBUG = process.env.DEBUG;
+const DEBUG = true;
 
 /**
  * Simulates communication with the Marvel AI endpoint.
@@ -31,7 +32,8 @@ const marvelCommunicator = async (payload) => {
 
     const { messages, user, toolData, type } = payload.data;
     const isToolCommunicator = type === BOT_TYPE.TOOL;
-    const MARVEL_API_KEY = process.env.MARVEL_API_KEY;
+    // const MARVEL_API_KEY = process.env.MARVEL_API_KEY;
+    const MARVEL_API_KEY = "AIzaSyAlXHdNPGTg7Nk7ZBYK0VGpLr_dBA7hvV8";
     const MARVEL_ENDPOINT = process.env.MARVEL_ENDPOINT;
 
     DEBUG &&
@@ -89,13 +91,13 @@ const marvelCommunicator = async (payload) => {
  */
 const chat = onCall(async (props) => {
   try {
-    DEBUG && logger.log('Communicator started, data:', props.data);
+    DEBUG && logger.log('Chat started, data:', props.data);
 
     const { message, id } = props.data;
 
     DEBUG &&
       logger.log(
-        'Communicator variables:',
+        'Chat variables:',
         `API_KEY: ${process.env.MARVEL_API_KEY}`,
         `ENDPOINT: ${process.env.MARVEL_ENDPOINT}`
       );
@@ -166,7 +168,7 @@ const chat = onCall(async (props) => {
 
     return { status: 'success' };
   } catch (error) {
-    DEBUG && logger.log('Communicator error:', error);
+    DEBUG && logger.log('Chat error:', error);
     throw new HttpsError('internal', error.message);
   }
 });

@@ -1,8 +1,8 @@
 const TOOLS_ID = {
-  QUIZ_GENERATOR: '0',
-  FLASHCARDS_GENERATOR: '1',
-  WORKSHEET_GENERATOR: '2',
-  SYLLABUS_GENERATOR: '6',
+  MULTIPLE_CHOICE_QUIZ_GENERATOR: 'multiple-choice-quiz-generator',
+  FLASHCARDS_GENERATOR: 'flashcard-generator',
+  WORKSHEET_GENERATOR: 'worksheet-generator',
+  SYLLABUS_GENERATOR: 'syllabus-generator',
 };
 
 export { TOOLS_ID };

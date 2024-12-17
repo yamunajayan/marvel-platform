@@ -12,7 +12,7 @@ import { copyToClipboard, exportToCSV } from '@/libs/utils/ToolHistoryUtils';
 import { TOOLS_ID } from '@/tools/libs/constants/tools';
 
 const DRAWER_RENDERERS = {
-  [TOOLS_ID.QUIZ_GENERATOR]: QuizOutput,
+  [TOOLS_ID.MULTIPLE_CHOICE_QUIZ_GENERATOR]: QuizOutput,
   [TOOLS_ID.FLASHCARDS_GENERATOR]: FlashCardsOutput,
 };
 

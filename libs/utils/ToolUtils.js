@@ -11,7 +11,7 @@ const getToolData = (props) => {
   const { toolId, item } = props;
 
   switch (toolId) {
-    case TOOLS_ID.QUIZ_GENERATOR: {
+    case TOOLS_ID.MULTIPLE_CHOICE_QUIZ_GENERATOR: {
       const title = `Multiple Choice Assessment - ${item.topic}`;
       const description =
         item.description ||
