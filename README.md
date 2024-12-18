@@ -128,6 +128,7 @@ firebase use <project-id>
 Once your Firebase project is properly configured:
 1. Install all dependencies: `npm run install:all`
 2. Deploy the project (frontend and functions): `npm run deploy`
+*In case your env file is not being picked at the deployment time, duplicate the .env file in /functions folder
 
 ## Contributing
 1. Fork the Repository: Create a personal fork of the repository to work on.
