@@ -63,21 +63,16 @@ To set up the project, follow these steps:
 
 ## Local Development
 
+
 1. Clone the repository: `git clone https://github.com/marvelai-org/marvel-platform`
 
 2. Create your firebase project on Google Firebase Console
 
-3. **Setup Firestore Database** (optional):
-   If you don't have a Firestore database instance, you can create one in the Firebase Console.
-   This step is only necessary if you want to use your own Firestore database for development option #1.
+3. Setup Firestore Database **(optional)**: If you don't have a Firestore database instance, you can create one in the Firebase Console. This step is only necessary if you want to use your own Firestore database for development option #1.
 
-4. **Get Firebase Config** (optional):
-   If you want to use your own Firebase project for development, you can get the Firebase config
-   from the Firebase project settings in the Firebase Console and update the `.env` file accordingly.
-   Otherwise, you can skip this step and use the default config values.
+4. Get Firebase Config **(optional)**: If you want to use your own Firebase project for development, you can get the Firebase config from the Firebase project settings in the Firebase Console and update the `.env` file accordingly. Otherwise, you can skip this step and use the default config values.
 
-5. Create a `.env` file in the root of the project using `sample.env` as a template:
-   Update the values in `.env` according to your needs.
+5. Create a `.env` file in the root of the project using `sample.env` as a template: Update the values in `.env` according to your needs.
 
 6. Install Firebase CLI by running the following in terminal: `npm install -g firebase-tools`
 
