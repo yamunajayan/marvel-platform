@@ -66,7 +66,8 @@ To set up the project, follow these steps:
 2. Create your firebase project on google firebase console
 3. Create a firestore database instance
 4. Optional: Get Firebase config from Firebase project settings in the Firebase Console. If you are
-   using setup option #2, you can skip this step and use the default configs. See the development options below.
+   using setup option #2, you can skip this step and use the default configs. See the development
+   options sections below.
 5. Create a `.env` file in the root of the project using `sample.env` as a template:
    The default values in `sample.env` are configured to connect to the production MarvelAI server (app.marvelai.app). You can keep these values if you want to use the production firebase backend (Firestore and Functions), or update them to point to your own firebase project which you can get from firebase console > Project settings > General (scroll to bottom).
 
