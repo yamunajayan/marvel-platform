@@ -1,15 +1,15 @@
-import { ContentCopy, FileDownload } from '@mui/icons-material';
-import { Button, Drawer, Grid, Typography } from '@mui/material';
-import moment from 'moment';
+import { ContentCopy, FileDownload } from "@mui/icons-material";
+import { Button, Drawer, Grid, Typography } from "@mui/material";
+import moment from "moment";
 
-import styles from './styles';
+import styles from "./styles";
 
-import FlashCardsOutput from './toolRenderers/FlashCardsOutput';
-import QuizOutput from './toolRenderers/QuizOutput';
+import FlashCardsOutput from "./toolRenderers/FlashCardsOutput";
+import QuizOutput from "./toolRenderers/QuizOutput";
 
-import { convertToUnixTimestamp } from '@/libs/utils/FirebaseUtils';
-import { copyToClipboard, exportToCSV } from '@/libs/utils/ToolHistoryUtils';
-import { TOOLS_ID } from '@/tools/libs/constants/tools';
+import { convertToUnixTimestamp } from "@/libs/utils/FirebaseUtils";
+import { copyToClipboard, exportToCSV } from "@/libs/utils/ToolHistoryUtils";
+import { TOOLS_ID } from "@/tools/libs/constants/tools";
 
 const DRAWER_RENDERERS = {
   [TOOLS_ID.MULTIPLE_CHOICE_QUIZ_GENERATOR]: QuizOutput,
@@ -17,13 +17,13 @@ const DRAWER_RENDERERS = {
 };
 
 const DEFAULT_DATA = {
-  title: 'Default Title',
-  content: 'Default Content',
+  title: "Default Title",
+  content: "Default Content",
   creationDate: moment().toDate().toLocaleDateString(),
   questions: [
     {
-      question: 'Default Question 1',
-      options: ['Option A', 'Option B', 'Option C', 'Option D'],
+      question: "Default Question 1",
+      options: ["Option A", "Option B", "Option C", "Option D"],
     },
   ],
 };
@@ -65,12 +65,12 @@ const ToolOutputHistoryDrawer = (props) => {
       </Grid>
       <Grid item>
         <Typography {...styles.categoryTitleProps}>
-          {data?.title || 'Default Title'}
+          {data?.title || "Default Title"}
         </Typography>
       </Grid>
       <Grid item>
         <Typography {...styles.categoryContentProps}>
-          {data?.description || 'Default Description'}
+          {data?.description || "Default Description"}
         </Typography>
       </Grid>
     </Grid>
@@ -85,7 +85,7 @@ const ToolOutputHistoryDrawer = (props) => {
   };
 
   const renderFooterButtons = () => (
-    <Grid container justifyContent="flex-start" sx={{ mt: 3, width: '100%' }}>
+    <Grid container justifyContent="flex-start" sx={{ mt: 3, width: "100%" }}>
       <Button onClick={handleCopyToClipboard} {...styles.copyButton}>
         <ContentCopy {...styles.CopyIcon} />
         Copy
