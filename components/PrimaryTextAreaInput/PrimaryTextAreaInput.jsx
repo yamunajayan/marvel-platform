@@ -1,6 +1,8 @@
-import { forwardRef } from "react";
+import { useState, forwardRef, useRef } from "react";
 import { TextFieldElement } from "react-hook-form-mui";
 import styles from "./styles";
+import { FileUploadOutlined, Close } from "@mui/icons-material";
+import { IconButton, Grid, InputAdornment, Chip } from "@mui/material";
 
 /**
  * Generates a reusable textarea component with a required title and an optional description.
@@ -33,6 +35,25 @@ const PrimaryTextArea = forwardRef((props, ref) => {
     ...otherProps
   } = props;
 
+  const fileInputRef = useRef(null);
+
+  const handleFileUpload = () => {
+    fileInputRef.current.click();
+  };
+
+  const [uploadedFile, setUploadedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setUploadedFile(file.name);
+    }
+  };
+
+  const removeFile = () => {
+    setUploadedFile(null);
+  };
+
   const TextAreaConfig = {
     id,
     label: title,
@@ -41,14 +62,47 @@ const PrimaryTextArea = forwardRef((props, ref) => {
     rows: 8, // Adjust the number of rows as needed
     helperText,
     InputLabelProps: styles.inputLabelProps(error, extraInputLabelProps),
-    InputProps: styles.inputProps(error, extraInputProps),
+    InputProps: {
+      ...styles.inputProps(error, extraInputProps),
+      endAdornment: (
+        <InputAdornment position="end">
+          <IconButton onClick={handleFileUpload}>
+            <FileUploadOutlined />
+          </IconButton>
+        </InputAdornment>
+      ),
+    },
     FormHelperTextProps: styles.helperTextProps(isDescription, error),
     autoComplete: "off",
     placeholder,
   };
 
   return (
-    <TextFieldElement inputRef={ref} {...TextAreaConfig} {...otherProps} />
+    <Grid container sx={{ width: "100%" }}>
+      {/* TextArea */}
+      <TextFieldElement inputRef={ref} {...TextAreaConfig} {...otherProps} />
+
+      {/* Hidden File Input */}
+      <input
+        type="file"
+        ref={fileInputRef}
+        style={{ display: "none" }}
+        onChange={handleFileChange}
+      />
+
+      {/* Show uploaded file with remove option */}
+      {uploadedFile && (
+        <Grid item sx={{ marginTop: "8px" }}>
+          <Chip
+            label={uploadedFile}
+            onDelete={removeFile}
+            sx={{ backgroundColor: "#444", color: "#fff", fontWeight: "bold" }}
+            icon={<FileUploadOutlined />}
+            deleteIcon={<Close />}
+          />
+        </Grid>
+      )}
+    </Grid>
   );
 });
 
