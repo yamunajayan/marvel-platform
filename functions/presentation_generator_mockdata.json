@@ -1,0 +1,49 @@
+{
+  "outlineMockData": {
+    "title": ["World War II"],
+    "subtitles": [
+      "Introduction to World War II",
+      "Key Battles and Events",
+      "Political Landscape",
+      "Technological Advances",
+      "Conclusion"
+    ]
+  },
+  "slideMockData": [
+    {
+      "id": "slide1",
+      "template": "titleSlide",
+      "title": "The iPhone Evolution: A History of Innovation",
+      "subtitle": "Innovation and Technology in Your Pocket"
+    },
+    {
+      "id": "slide2",
+      "template": "titleBody",
+      "title": "Introduction to World War II",
+      "content": "World War II was a global conflict that reshaped international relations, economics, and society."
+    },
+    {
+      "id": "slide3",
+      "template": "titleBullets",
+      "title": "Causes of the War",
+      "bullets": [
+        "Economic downturn",
+        "Political tensions",
+        "Nationalism and imperialism"
+      ]
+    },
+    {
+      "id": "slide4",
+      "template": "twoColumn",
+      "title": "Impacts of the War",
+      "column1": ["Political changes", "New borders"],
+      "column2": ["Economic consequences", "Social transformations"]
+    },
+    {
+      "id": "slide5",
+      "template": "sectionHeader",
+      "title": "Conclusion",
+      "subtitle": "Reflecting on a Global Conflict"
+    }
+  ]
+}

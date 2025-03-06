@@ -51,6 +51,21 @@ const styles = {
     fontFamily: "Satoshi Regular",
     fontSize: { laptop: "18px", desktop: "20px" },
   },
+  actionButtonGridProps: {
+    alignSelf: "end",
+  },
+  submitButtonProps: {
+    color: "purple",
+    extraProps: {
+      padding: "2px",
+      height: { laptop: "42px", desktop: "44px", desktopMedium: "47px" },
+    },
+    extraButtonProps: {
+      fontFamily: "Satoshi Medium",
+      fontSize: { laptop: "14px", desktop: "15px", desktopMedium: "16px" },
+      px: { laptop: 5, desktop: 6, desktopMedium: 7 },
+    },
+  },
 };
 
 export default styles;

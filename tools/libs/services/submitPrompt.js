@@ -1,8 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
-import { addDoc, collection, Timestamp } from 'firebase/firestore';
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 
-import { firestore } from '@/libs/redux/store'; // Import the existing Firestore instance
+import { firestore } from "@/libs/redux/store"; // Import the existing Firestore instance
+import presentation_generator_mockdata from "../../../functions/presentation_generator_mockdata.json";
 
 /**
  * Save the tool session response to Firestore
@@ -10,15 +11,17 @@ import { firestore } from '@/libs/redux/store'; // Import the existing Firestore
  */
 const saveResponseToFirestore = async (sessionData) => {
   try {
-    await addDoc(collection(firestore, 'toolSessions'), {
+    await addDoc(collection(firestore, "toolSessions"), {
       ...sessionData,
       createdAt: Timestamp.fromMillis(Date.now()),
     });
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error('Error saving tool session to Firestore:', error);
+    console.error("Error saving tool session to Firestore:", error);
   }
 };
+
+const presentataionMockData = presentation_generator_mockdata;
 
 /**
  * Submits a prompt to the Marvel AI backend and saves the response to Firestore
@@ -32,18 +35,39 @@ const saveResponseToFirestore = async (sessionData) => {
  */
 const submitPrompt = async (payload) => {
   try {
+    if (payload.tool_data.tool_id === "presentation-generator") {
+      console.log("Bypassing API call and using mock data...");
+
+      const topicInput = payload.tool_data.inputs.find(
+        (input) => input.name === "topic"
+      );
+      const topic = topicInput ? topicInput.value : null;
+
+      const sessionData = {
+        response: presentation_generator_mockdata,
+        toolId: payload.tool_data.tool_id,
+        topic,
+        userId: payload.user.id,
+      };
+
+      // Save to Firestore in a non-blocking manner
+      saveResponseToFirestore(sessionData);
+
+      return presentation_generator_mockdata;
+    }
+
     const url = `${process.env.NEXT_PUBLIC_MARVEL_ENDPOINT}submit-tool`;
 
     const response = await axios.post(url, payload, {
       headers: {
-        'Content-Type': 'application/json',
-        'API-Key': 'dev',
+        "Content-Type": "application/json",
+        "API-Key": "dev",
       },
     });
 
     // Safely extract the topic from inputs
     const topicInput = payload.tool_data.inputs.find(
-      (input) => input.name === 'topic'
+      (input) => input.name === "topic"
     );
     const topic = topicInput ? topicInput.value : null;
 
@@ -63,7 +87,7 @@ const submitPrompt = async (payload) => {
     const { response } = err;
 
     // eslint-disable-next-line no-console
-    console.error('Error sending request:', err);
+    console.error("Error sending request:", err);
 
     throw new Error(
       response?.data?.message || `Error: could not send prompt, ${err}`
