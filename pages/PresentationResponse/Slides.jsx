@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
-import StretchImageSlide from './SlideTemplates/StretchImageSlide';
-import TitleBodyImageSlide from './SlideTemplates/TitleBodyImageSlide';
-import TitleBodySlide from './SlideTemplates/TitleBodySlide';
+import StretchImageSlide from "./SlideTemplates/StretchImageSlide";
+import TitleBodyImageSlide from "./SlideTemplates/TitleBodyImageSlide";
+import TitleBodySlide from "./SlideTemplates/TitleBodySlide";
 
 // Import slide templates
-import TitleBulletsImageSlide from './SlideTemplates/TitleBulletsImageSlide';
-import TitleBulletsSlide from './SlideTemplates/TitleBulletsSlide';
+import TitleBulletsImageSlide from "./SlideTemplates/TitleBulletsImageSlide";
+import TitleBulletsSlide from "./SlideTemplates/TitleBulletsSlide";
 // Import image slide templates
-import TitleImageSlide from './SlideTemplates/TitleImageSlide';
-import TwoColumnImageSlide from './SlideTemplates/TwoColumnImageSlide';
-import { styles } from './styles';
+import TitleImageSlide from "./SlideTemplates/TitleImageSlide";
+import TwoColumnImageSlide from "./SlideTemplates/TwoColumnImageSlide";
+import { styles } from "./styles";
 
 const Slides = () => {
   const [presentationData, setPresentationData] = useState([]);
@@ -21,130 +21,130 @@ const Slides = () => {
 
   useEffect(() => {
     // Get presentation data from sessionStorage
-    const storedData = sessionStorage.getItem('presentationData');
+    const storedData = sessionStorage.getItem("presentationData");
 
     // Sample data for testing with images
     const sampleData = [
       // Standalone horizontal slide - Title slide
       {
-        template: 'titleImage',
-        title: 'Presentation with Images',
-        subtitle: 'Using Reveal.js image capabilities',
-        imageUrl: 'https://picsum.photos/id/1015/800/600',
+        template: "titleImage",
+        title: "Presentation with Images",
+        subtitle: "Using Reveal.js image capabilities",
+        imageUrl: "https://picsum.photos/id/1015/800/600",
       },
 
       // First vertical group - Image examples
       {
-        template: 'titleBodyImage',
-        title: 'Working with Images',
+        template: "titleBodyImage",
+        title: "Working with Images",
         content: [
-          'This section demonstrates different ways to incorporate images into your presentation slides.',
+          "This section demonstrates different ways to incorporate images into your presentation slides.",
         ],
-        imageUrl: 'https://picsum.photos/id/1019/800/600',
-        group: 'imageExamples',
+        imageUrl: "https://picsum.photos/id/1019/800/600",
+        group: "imageExamples",
       },
       {
-        template: 'titleBodyImage',
-        title: 'Title with Body and Image',
+        template: "titleBodyImage",
+        title: "Title with Body and Image",
         content: [
-          'This slide demonstrates how to combine text content with an image. Images can help illustrate concepts and make your presentations more engaging.',
+          "This slide demonstrates how to combine text content with an image. Images can help illustrate concepts and make your presentations more engaging.",
         ],
-        imageUrl: 'https://picsum.photos/id/1019/800/600',
-        group: 'imageExamples',
+        imageUrl: "https://picsum.photos/id/1019/800/600",
+        group: "imageExamples",
       },
       {
-        template: 'titleBulletsImage',
-        title: 'Bullet Points with Image',
+        template: "titleBulletsImage",
+        title: "Bullet Points with Image",
         content: [
-          'First important point',
-          'Second important point',
-          'Third important point with more detail',
+          "First important point",
+          "Second important point",
+          "Third important point with more detail",
         ],
-        imageUrl: 'https://picsum.photos/id/1016/800/600',
-        group: 'imageExamples',
+        imageUrl: "https://picsum.photos/id/1016/800/600",
+        group: "imageExamples",
       },
 
       // Standalone horizontal slide - Special image layout
       {
-        template: 'stretchImage',
-        title: 'Full-Size Image Example',
-        caption: 'Using r-stretch to fill available space',
-        imageUrl: 'https://picsum.photos/id/1018/1200/800',
+        template: "stretchImage",
+        title: "Full-Size Image Example",
+        caption: "Using r-stretch to fill available space",
+        imageUrl: "https://picsum.photos/id/1018/1200/800",
       },
 
       // Second vertical group - Advanced layouts
       {
-        template: 'titleBodyImage',
-        title: 'Advanced Layout Options',
+        template: "titleBodyImage",
+        title: "Advanced Layout Options",
         content: [
-          'Explore different layout configurations for presenting complex information',
+          "Explore different layout configurations for presenting complex information",
         ],
-        imageUrl: 'https://picsum.photos/id/1025/800/600',
-        group: 'advancedLayouts',
+        imageUrl: "https://picsum.photos/id/1025/800/600",
+        group: "advancedLayouts",
       },
       {
-        template: 'twoColumnImage',
-        title: 'Two Columns with Image',
+        template: "twoColumnImage",
+        title: "Two Columns with Image",
         leftContent: {
-          title: 'Left Column',
-          bullets: ['Point 1', 'Point 2', 'Point 3'],
+          title: "Left Column",
+          bullets: ["Point 1", "Point 2", "Point 3"],
         },
         rightContent: {
-          title: 'Right Column',
-          bullets: ['Item A', 'Item B', 'Item C'],
+          title: "Right Column",
+          bullets: ["Item A", "Item B", "Item C"],
         },
-        imageUrl: 'https://picsum.photos/id/1020/800/600',
-        group: 'advancedLayouts',
+        imageUrl: "https://picsum.photos/id/1020/800/600",
+        group: "advancedLayouts",
       },
 
       // Third vertical group - Design tips
       {
-        template: 'titleBodyImage',
-        title: 'Design Tips',
+        template: "titleBodyImage",
+        title: "Design Tips",
         content: [
-          'Effective strategies for creating visually appealing presentations',
+          "Effective strategies for creating visually appealing presentations",
         ],
-        imageUrl: 'https://picsum.photos/id/1029/800/600',
-        group: 'designTips',
+        imageUrl: "https://picsum.photos/id/1029/800/600",
+        group: "designTips",
       },
       {
-        template: 'titleBulletsImage',
-        title: 'Visual Consistency',
+        template: "titleBulletsImage",
+        title: "Visual Consistency",
         content: [
-          'Use a consistent color scheme throughout',
-          'Maintain uniform typography and sizing',
-          'Align elements to create visual harmony',
+          "Use a consistent color scheme throughout",
+          "Maintain uniform typography and sizing",
+          "Align elements to create visual harmony",
         ],
-        imageUrl: 'https://picsum.photos/id/1040/800/600',
-        group: 'designTips',
+        imageUrl: "https://picsum.photos/id/1040/800/600",
+        group: "designTips",
       },
       {
-        template: 'titleBulletsImage',
-        title: 'Image Selection',
+        template: "titleBulletsImage",
+        title: "Image Selection",
         content: [
-          'Choose high-quality, relevant images',
-          'Consider the emotional impact of your visuals',
-          'Ensure proper contrast with text elements',
+          "Choose high-quality, relevant images",
+          "Consider the emotional impact of your visuals",
+          "Ensure proper contrast with text elements",
         ],
-        imageUrl: 'https://picsum.photos/id/1050/800/600',
-        group: 'designTips',
+        imageUrl: "https://picsum.photos/id/1050/800/600",
+        group: "designTips",
       },
     ];
     setPresentationData(sampleData);
-    console.log('Using sample data for testing');
+    console.log("Using sample data for testing");
   }, []);
 
   useEffect(() => {
     // Only attempt to initialize Reveal.js on the client side
     if (
-      typeof window !== 'undefined' &&
+      typeof window !== "undefined" &&
       presentationData.length > 0 &&
       !revealLoaded
     ) {
       const loadReveal = async () => {
         try {
           // Dynamic import of Reveal.js (client-side only)
-          const Reveal = (await import('reveal.js')).default;
+          const Reveal = (await import("reveal.js")).default;
 
           // Initialize Reveal once it's loaded
           if (revealRef.current) {
@@ -153,13 +153,13 @@ const Slides = () => {
               progress: true,
               center: true,
               hash: true,
-              width: '100%',
-              height: '100%',
-              transition: 'slide', // none/fade/slide/convex/concave/zoom
+              width: "100%",
+              height: "100%",
+              transition: "slide", // none/fade/slide/convex/concave/zoom
               // Enable navigation in all directions
-              navigationMode: 'default',
+              navigationMode: "default",
               // Show arrows for vertical slides
-              controlsLayout: 'bottom-right',
+              controlsLayout: "bottom-right",
               controlsTutorial: true,
               // Make the slides properly fill the screen
               margin: 0.05,
@@ -170,13 +170,13 @@ const Slides = () => {
             await deck.initialize();
             window.Reveal = deck;
             setRevealLoaded(true);
-            console.log('Reveal.js initialized successfully!');
+            console.log("Reveal.js initialized successfully!");
 
             // Log available routes to help with debugging
-            console.log('Available routes:', deck.availableRoutes());
+            console.log("Available routes:", deck.availableRoutes());
           }
         } catch (error) {
-          console.error('Failed to load or initialize Reveal.js:', error);
+          console.error("Failed to load or initialize Reveal.js:", error);
         }
       };
 
@@ -186,7 +186,7 @@ const Slides = () => {
 
   // Helper to check if we can navigate in a direction
   const canNavigate = (direction) => {
-    if (!window.Reveal) return false;
+    if (typeof window === "undefined" || !window.Reveal) return false;
     const routes = window.Reveal.availableRoutes();
     return routes && routes[direction];
   };
@@ -221,7 +221,7 @@ const Slides = () => {
       const slides = groupedSlides[group];
 
       // If this is a standalone slide (no group property in the original slide)
-      if (group.startsWith('standalone_') && slides.length === 1) {
+      if (group.startsWith("standalone_") && slides.length === 1) {
         return (
           <section key={groupIndex} data-transition="slide">
             {renderSlide(slides[0], groupIndex)}
@@ -259,15 +259,15 @@ const Slides = () => {
 
     switch (template) {
       // Original templates
-      case 'titleBody':
+      case "titleBody":
         return <TitleBodySlide key={index} title={title} content={content} />;
-      case 'titleBullets':
+      case "titleBullets":
         return (
           <TitleBulletsSlide key={index} title={title} content={content} />
         );
 
       // Image-based templates
-      case 'titleImage':
+      case "titleImage":
         return (
           <TitleImageSlide
             key={index}
@@ -276,7 +276,7 @@ const Slides = () => {
             imageUrl={imageUrl}
           />
         );
-      case 'titleBodyImage':
+      case "titleBodyImage":
         return (
           <TitleBodyImageSlide
             key={index}
@@ -285,7 +285,7 @@ const Slides = () => {
             imageUrl={imageUrl}
           />
         );
-      case 'titleBulletsImage':
+      case "titleBulletsImage":
         return (
           <TitleBulletsImageSlide
             key={index}
@@ -294,7 +294,7 @@ const Slides = () => {
             imageUrl={imageUrl}
           />
         );
-      case 'twoColumnImage':
+      case "twoColumnImage":
         return (
           <TwoColumnImageSlide
             key={index}
@@ -304,7 +304,7 @@ const Slides = () => {
             imageUrl={imageUrl}
           />
         );
-      case 'stretchImage':
+      case "stretchImage":
         return (
           <StretchImageSlide
             key={index}
@@ -349,8 +349,8 @@ const Slides = () => {
     if (window.Reveal) {
       window.Reveal.sync();
       window.Reveal.layout();
-      console.log('Slides refreshed');
-      console.log('Available routes:', window.Reveal.availableRoutes());
+      console.log("Slides refreshed");
+      console.log("Available routes:", window.Reveal.availableRoutes());
     }
   };
 
@@ -358,17 +358,17 @@ const Slides = () => {
     <div
       className="presentation-wrapper"
       style={{
-        width: '100%',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       {/* Main Reveal container */}
       <div
         className="reveal"
         ref={revealRef}
-        style={{ flex: 1, width: '100%', overflow: 'hidden' }}
+        style={{ flex: 1, width: "100%", overflow: "hidden" }}
       >
         <div className="slides">{renderSlides()}</div>
       </div>
@@ -376,48 +376,48 @@ const Slides = () => {
       {/* Navigation controls */}
       <div
         style={{
-          padding: '10px',
-          textAlign: 'center',
-          backgroundColor: '#f0f0f0',
+          padding: "10px",
+          textAlign: "center",
+          backgroundColor: "#f0f0f0",
         }}
       >
         <button
           onClick={goToPrev}
-          style={{ margin: '0 5px', padding: '5px 15px' }}
-          disabled={!canNavigate('left')}
+          style={{ margin: "0 5px", padding: "5px 15px" }}
+          disabled={!canNavigate("left")}
         >
           Previous
         </button>
         <button
           onClick={goToNext}
-          style={{ margin: '0 5px', padding: '5px 15px' }}
-          disabled={!canNavigate('right')}
+          style={{ margin: "0 5px", padding: "5px 15px" }}
+          disabled={!canNavigate("right")}
         >
           Next
         </button>
         <button
           onClick={goToUp}
-          style={{ margin: '0 5px', padding: '5px 15px' }}
-          disabled={!canNavigate('up')}
+          style={{ margin: "0 5px", padding: "5px 15px" }}
+          disabled={!canNavigate("up")}
         >
           Up
         </button>
         <button
           onClick={goToDown}
-          style={{ margin: '0 5px', padding: '5px 15px' }}
-          disabled={!canNavigate('down')}
+          style={{ margin: "0 5px", padding: "5px 15px" }}
+          disabled={!canNavigate("down")}
         >
           Down
         </button>
         <button
           onClick={toggleOverview}
-          style={{ margin: '0 5px', padding: '5px 15px' }}
+          style={{ margin: "0 5px", padding: "5px 15px" }}
         >
           Overview
         </button>
         <button
           onClick={refreshSlides}
-          style={{ margin: '0 5px', padding: '5px 15px' }}
+          style={{ margin: "0 5px", padding: "5px 15px" }}
         >
           Refresh
         </button>
@@ -425,16 +425,16 @@ const Slides = () => {
 
       {/* Debug navigation information */}
       <div
-        style={{ padding: '5px', backgroundColor: '#eee', fontSize: '12px' }}
+        style={{ padding: "5px", backgroundColor: "#eee", fontSize: "12px" }}
       >
-        <strong>Navigation Status:</strong>{' '}
+        <strong>Navigation Status:</strong>{" "}
         {revealLoaded
           ? `Routes: ${
               window.Reveal
                 ? JSON.stringify(window.Reveal.availableRoutes())
-                : 'Calculating...'
+                : "Calculating..."
             }`
-          : 'Reveal not loaded'}
+          : "Reveal not loaded"}
       </div>
     </div>
   );
